@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dorfer.scheduler_pomodoro">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name="com.dorfer.scheduler_pomodoro.Activity.DayActivity">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN" />
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dorfer.scheduler_pomodoro.Activity.AddTaskActivity"
+            android:parentActivityName="com.dorfer.scheduler_pomodoro.Activity.DayActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dorfer.scheduler_pomodoro.Activity.DayActivity" />
+        </activity>
+        <activity
+            android:name="com.dorfer.scheduler_pomodoro.Activity.PomodoroActivity"
+            android:parentActivityName="com.dorfer.scheduler_pomodoro.Activity.DayActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dorfer.scheduler_pomodoro.Activity.DayActivity" />
+        </activity>
+        <activity
+            android:name="com.dorfer.scheduler_pomodoro.Activity.SettingsPomodoroActivity"
+            android:parentActivityName="com.dorfer.scheduler_pomodoro.Activity.PomodoroActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.dorfer.scheduler_pomodoro.Activity.PomodoroActivity" />
+        </activity>
+        <receiver
+            android:name="com.dorfer.scheduler_pomodoro.Recievers.AlarmReceiverPomodoro"
+            android:exported="false"/>
+        <receiver android:name="com.dorfer.scheduler_pomodoro.Recievers.AlarmReceiverTaskNotification"
+            android:exported="false"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/add_task_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <android.support.v7.widget.ActionMenuView
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/paddings_add_task"
+        android:paddingEnd="@dimen/paddings_add_task"
+        android:paddingTop="@dimen/paddings_add_task"
+        android:paddingBottom="@dimen/paddings_add_task">
+
+        <EditText
+            android:id="@+id/task_content_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/task_hint"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/set_duration"
+            android:textColor="@color/black"
+            android:textSize="@dimen/switchers_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/set_duration_switcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/set_duration_switcher" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/set_start_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/switchers_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/set_start_time_switcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/set_start_time_switcher" />
+
+        <Switch
+            android:id="@+id/set_start_time_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_content_field" />
+
+        <TextView
+            android:id="@+id/bind_start_time_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/set_start_time_switcher"
+            app:layout_constraintEnd_toStartOf="@+id/set_start_time_switcher"
+            app:layout_constraintTop_toTopOf="@+id/set_start_time_switcher" />
+
+        <Switch
+            android:id="@+id/set_duration_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_start_time_switcher" />
+
+        <TextView
+            android:id="@+id/bind_duration_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/set_duration_switcher"
+            app:layout_constraintEnd_toStartOf="@+id/set_duration_switcher"
+            app:layout_constraintTop_toTopOf="@+id/set_duration_switcher" />
+
+        <TextView
+            android:id="@+id/bind_set_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/set_notification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/switchers_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/add_task_notification_check_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/add_task_notification_check_box" />
+
+        <CheckBox
+            android:id="@+id/add_task_notification_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_duration_switcher" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
